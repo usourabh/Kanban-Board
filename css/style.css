@@ -1,0 +1,176 @@
+/* Reset default CSS */
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(41, 41, 41);
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+#home{
+  color: white;
+  text-decoration: none;
+}
+#navbar{
+  display: flex;
+  justify-content: space-between;
+}
+
+#leftDiv, #rightDiv {
+  color: white;
+  font-size: 20px;
+  padding: 25px 45px 25px 45px;
+}
+
+#allTaskDiv{
+  color: #ffffff;
+  font-size: 25px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  overflow-x: hidden;
+}
+
+#todoDiv, #inProgressDiv, #doneDiv{
+  color: #ffffff;
+  font-size: 25px;
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+  border: 1px solid #ffffff;
+}
+
+#todoDiv h2,
+#inProgressDiv h2,
+#doneDiv h2 {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a1d541;
+}
+
+
+.singleCard{
+  background-color: rgb(74,74,74);
+  height: 170px;
+  width: 400px;
+  margin: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column; 
+}
+.cardHeading{
+  color: white; 
+  font-size: 20px;
+  margin-left: 15px;  
+  padding-bottom: 0px;
+  background-color: rgb(74,74,74);
+  padding: 1px;
+  overflow-x: auto;
+}
+.editTodoSvg{
+  width: 25px;
+  height: 25px;
+  color: white;
+  background-color: rgb(74,74,74);
+  margin-right: 15px;
+}
+#cardHeadingNSvg{
+  width: auto;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(74,74,74);
+  align-items: center;
+}
+#tag-Container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+  width: auto;
+  height: 45px;
+  background-color: rgb(74,74,74);
+}
+.tags{
+  background-color: rgb(74,174,174);
+  color: white;
+  font-size: 15px;
+  padding: 4px;
+  margin-right: 4px;
+  border-radius: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#descriptionCard{
+  background-color: rgb(74,74,74);
+  margin-left: 15px;
+  color: white;
+  width: auto;
+  height: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: row;
+  align-items: center;
+}
+#descriptionCard h6{
+  background-color: rgb(74,74,74);
+  padding: 3px 0px 3px 3px;
+  width: 220px;
+  font-size: 12px;
+}
+#readMore{
+  color: rgb(111,133,247);
+  width: auto;
+  font-size: 15px;
+  background-color: rgb(74,74,74);
+  text-decoration: none;
+}
+#createdNUpdatedDiv{
+  background-color: rgb(74,74,74);
+  padding-right: 15px;
+  width: auto;
+  margin-left: 15px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#createdNUpdatedDiv, h6, span{
+  padding-left: 0px;
+  font-size: 10px;
+  background-color: rgb(74,74,74);
+}
+#createdAtDiv{
+  padding-left: 0px;
+  font-size: 10px;
+  background-color: rgb(74,74,74);
+}
+
+#updatedAtDiv{
+  padding-right: 0px;
+}
+#createTodoBtn{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:50px;
+    right:50px;
+    background-color: rgb(37, 247, 9);
+    border-radius:50px;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#createIcon{
+  width:30px;
+  height:30px;
+  background-color: rgb(37, 247, 9);
+}

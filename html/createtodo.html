@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- GOOGLE FONTS START-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GOOGLE FONTS END -->
+
+    <link rel="stylesheet" href="../css/createTodo.css" />
+  </head>
+  <body>
+    <!-- Navbar Starts -->
+    <div id="navbar">
+      <div id="leftDiv">Kanban Board</div>
+      <div id="rightDiv">Home</div>
+    </div>
+    <div id="headingDiv"><h1 id="createtaskDiv">Create Task</h1></div>
+    <!-- Navbar Ends -->
+
+    <!-- Form Starts -->
+    <div id="formDiv">
+      <form>
+        <label for="taskName" class="label"> Title: </label><br />
+        <input
+          type="text"
+          id="titleInput"
+          name="taskName"
+          placeholder="Write your task Name ...."
+        /><br />
+        <label for="Description" class="label">Description</label><br />
+        <textarea
+          name="Description"
+          id="textareaInput"
+          cols="74"
+          rows="6"
+          placeholder="Write your task description...."
+        ></textarea>
+      </form>
+
+      <!-- Tags section -->
+      <div>
+        <div id="tag-Container">
+          <div class="tags">
+            <h6>code</h6>
+            <img
+              class="tagCloseBtn"
+              onclick="removeTag(this)"
+              src="../assets/close.svg"
+              alt="closeBtn"
+            />
+          </div>
+          <div class="tags">
+            <h6>daily</h6>
+            <img class="tagCloseBtn" src="../assets/close.svg" alt="closeBtn" />
+          </div>
+        </div>
+      </div>
+
+      <!-- submit button -->
+      <div id="submitBtn">
+        <button id="createBtn" onclick="createTodo()">
+          <h6>Create Task</h6>
+        </button>
+        <button id="createNViewBtn"><h6>Create & View</h6></button>
+      </div>
+    </div>
+    <script src="../javascript/createTodo.js"></script>
+  </body>
+</html>

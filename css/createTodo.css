@@ -1,0 +1,145 @@
+/* Reset default CSS */
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(41, 41, 41);
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff;
+}
+ 
+#leftDiv, #rightDiv {       
+  color: white;
+  font-size: 20px;
+  padding: 25px 45px 25px 45px;
+}
+
+#headingDiv{
+  color: white;
+  font-size: 20px;
+  padding: 35px 45px 30px 45px;
+}
+
+#formDiv{
+display: flex;
+flex-direction: column;
+justify-content: left;
+margin-left: 45px;
+}
+
+.label{
+  color: white;
+  background-color: rgb(41, 41, 41);
+  font-size: 25px;
+  padding: 0px 0px 35px 0px;
+  margin-bottom: 20px;
+}
+
+#titleInput {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  outline: none;
+  background-color: rgb(74,74,74);
+  padding-left: 10px;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  width: 500px;
+  height: 40px;
+}
+#textareaInput{
+  border: 1px solid white;
+  color: white;
+  font-size: 15px;
+  padding: 13px;
+  width: 500px;
+  height: 150px;
+  background-color: rgb(74,74,74);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  outline: none;
+  resize: none;
+}
+#tag-Container{
+  background-color: rgb(74,74,74);
+  border: 1px solid white;
+  padding: 7px;
+  width: 500px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: row;
+  align-items: center;
+  overflow-x: auto;
+}
+.tags{
+  background-color: rgb(164,164,164);
+  padding: 6px;
+  height: 35px;
+  border-radius: 6px;
+  color: white;
+  margin-right: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+}
+
+#tag-Container h6{
+  background-color: rgb(164,164,164);
+  font-size: 14px;
+}
+
+.tagCloseBtn{
+  width: 13px;
+  height: 13px;
+  margin-left: 5px;
+  background-color: rgb(164,164,164);
+}
+
+#submitBtn{
+  margin-top: 20px;
+  width: 500px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+}
+
+
+#createBtn, #createNViewBtn{
+  margin: 8px ;
+  padding: 9px;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  overflow-y: none;
+  font-size: 20px;
+}
+#createBtn{
+  margin-left: 0px;
+  border: 1px solid  rgb(4,173,54);
+}
+#createBtn, #createBtn h6{
+  background-color: rgb(4,173,54);
+  color: white;
+}
+
+#createNViewBtn, #createNViewBtn h6{
+  background-color: rgb(187,88,234);
+  border: 1px solid rgb(187,88,234);
+  color: white;
+}

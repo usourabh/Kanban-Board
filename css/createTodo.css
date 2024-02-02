@@ -16,10 +16,11 @@ body {
   border-bottom: 1px solid #ffffff;
 }
  
-#leftDiv, #rightDiv {       
+#leftDiv, #rightDiv, a{       
   color: white;
   font-size: 20px;
   padding: 25px 45px 25px 45px;
+  text-decoration: none;
 }
 
 #headingDiv{
@@ -71,6 +72,15 @@ margin-left: 45px;
   outline: none;
   resize: none;
 }
+#createIcon{
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+}
+#tagSection{
+  display: flex;
+  flex-direction: row;
+}
 #tag-Container{
   background-color: rgb(74,74,74);
   border: 1px solid white;
@@ -81,10 +91,10 @@ margin-left: 45px;
   display: flex;
   justify-content: row;
   align-items: center;
-  overflow-x: auto;
+  overflow-y: auto;
 }
 .tags{
-  background-color: rgb(164,164,164);
+  background-color: rgb(236, 191, 12);
   padding: 6px;
   height: 35px;
   border-radius: 6px;
@@ -95,18 +105,22 @@ margin-left: 45px;
   justify-content: space-between;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 #tag-Container h6{
-  background-color: rgb(164,164,164);
+  background-color: rgb(236, 191, 12);
   font-size: 14px;
+  overflow-y: hidden;
+  color: black;
+  overflow-x: auto;
 }
 
 .tagCloseBtn{
   width: 13px;
   height: 13px;
   margin-left: 5px;
-  background-color: rgb(164,164,164);
+  background-color: rgb(236, 191, 12);
 }
 
 #submitBtn{

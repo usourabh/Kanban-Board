@@ -21,60 +21,66 @@ window.onload = () => {
     alert("hello");
   }
 };
-/**
- *
- * @param {*} element
- * @param {*} data
- *
- *
- * @returns
- */
+
 const cardsToAppend = (element, data) => {
   const card = document
     .querySelector("#singleTaskCardTempl")
     .content.cloneNode(true);
 
   const cardHeading = card.querySelector(".cardHeading");
+  const cardDescription = card.querySelector(".description");
   const tagContainer = card.querySelector(".tag-Container");
+  const todoCreateDate = card.querySelector(".createDateSpan");
+  const todoUpdateDate = card.querySelector(".updateDateSpan");
+  const editButton = card.querySelector(".editTodoSvg");
 
   // Set the following data content to element
   cardHeading.textContent = data.todoName;
+  editButton.setAttribute("id", data.id);
 
   data.tags.forEach((tag) => {
     const tagElement = document
       .querySelector("#chipTagTemplate")
       .content.cloneNode(true);
-    tagElement.textContent = tag;
+    // tagElement.textContent = tag;
+    tagElement.querySelector(".singleTag").textContent = tag;
 
     tagContainer.appendChild(tagElement);
-    console.log(tagElement, tag);
   });
+  cardDescription.textContent = data.todoDesc.slice(0, 30);
+  todoCreateDate.textContent = data.createdOn;
+  todoUpdateDate.textContent = data.updateOn;
 
   element.appendChild(card);
 };
 
-// const setCardInCategory = (div, name, desc, tags, createDate, updateDate) => {
-//   const tagTemp = document
-//     .getElementById("singleTaskCardTempl")
-//     .content.cloneNode(true);
-//   div.appendChild(tagTemp);
+const editTask = (id) => {
+  const savedTask = JSON.parse(localStorage.getItem("kanbanBoard"));
+  const singleTask = savedTask.find((task) => {
+    if (task.id == id) {
+      return task;
+    }
+  });
+  if (singleTask) {
+    window.open("http://127.0.0.1:5500/html/edittask.html", "_blank");
+    const taskTile = document.querySelector("#titleInput");
+    const taskDesc = document.querySelector("#textareaInput");
+    const tagContainer = document.querySelector("#tag-Container");
+    const singleTag = document
+      .querySelector("#newTagTemp")
+      .content.cloneNode(true);
 
-//   const todoTag = document.querySelector("#tag-Container");
-//   const todoCreateDate = document.querySelector("#createDateSpan");
-//   const todoUpdateDate = document.querySelector("#updateDateSpan");
+    taskTile.textContent = singleTag.todoName;
+    taskDesc.textContent = singleTag.todoDesc;
 
-//   document.querySelector("h4").innerHTML = name;
+    singleTag.tags.forEach((tag) => {
+      const singleTag = document
+        .querySelector("#newTagTemp")
+        .content.cloneNode(true);
 
-//   for (let i = 0; i < tags.length; i++) {
-//     const chipTagTemplate = todoTag
-//       .getElementsByClassName("chipTagTemplate")
-//       .content.cloneNode(true);
-//     todoTag.appendChild(chipTagTemplate);
-//     // chipTagTemplate.innerHTML = tags[i];
-//     document.querySelectorAll(".tags")[i].innerHTML = tags[i];
-//   }
+      singleTag.querySelector(".singleTag").textContent = tag;
 
-//   document.querySelector("h5").innerHTML = desc;
-//   todoCreateDate.innerHTML = createDate;
-//   todoUpdateDate.innerHTML = updateDate;
-// };
+      tagContainer.appendChild(singleTag);
+    });
+  }
+};

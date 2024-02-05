@@ -30,13 +30,12 @@
           <!-- single card heading and edit button -->
           <div class="cardHeadingNSvg">
             <h4 class="cardHeading"></h4>
-            <a href=""
-              ><img
-                src="./assets/editTodo.svg"
-                class="editTodoSvg"
-                alt="editBtn"
-                onclick=""
-            /></a>
+            <img
+              src="./assets/editTodo.svg"
+              class="editTodoSvg"
+              alt="editBtn"
+              onclick="editTask(this.id)"
+            />
           </div>
 
           <!-- tag container -->
@@ -45,10 +44,8 @@
 
           <!-- description div -->
           <div class="descriptionCard">
-            <p></p>
-            <a class="readMore" href="/html/createtodo.html" target="_blank"
-              >.... Read more</a
-            >
+            <p class="description"></p>
+            <a class="readMore" target="_blank"> ....Read more </a>
           </div>
 
           <!-- timestamps div -->
@@ -73,7 +70,7 @@
       </template>
 
       <template id="chipTagTemplate">
-        <div class="tags"></div>
+        <div class="singleTag"></div>
       </template>
 
       <div id="todoDiv">

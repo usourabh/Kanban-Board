@@ -96,15 +96,16 @@ body {
   height: 45px;
   background-color: rgb(74,74,74);
 }
-.tags{
-  background-color: rgb(74,174,174);
-  color: white;
+.singleTag{
+  background-color: rgb(97, 245, 5);
+  width: auto;
+  padding: 5px;
+  margin: 5px;
   font-size: 15px;
-  padding: 4px;
-  margin-right: 4px;
-  border-radius: 8px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  border-radius: 9px;
+  color: black;
+  border: none;
+
 }
 
 .descriptionCard{
@@ -119,11 +120,12 @@ body {
   justify-content: row;
   align-items: center;
 }
-.descriptionCard h5{
+.descriptionCard p{
   background-color: rgb(74,74,74);
   padding: 3px 0px 3px 3px;
-  width: 220px;
+  width: auto;
   font-size: 12px;
+
 }
 .readMore{
   color: rgb(111,133,247);
@@ -142,7 +144,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.createdNUpdatedDiv, h6, span{
+.createdNUpdatedDiv, p, span{
   padding-left: 0px;
   font-size: 10px;
   background-color: rgb(74,74,74);
@@ -157,17 +159,17 @@ body {
   padding-right: 0px;
 }
 #createTodoBtn{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:50px;
-    right:50px;
-    background-color: rgb(37, 247, 9);
-    border-radius:50px;
-    text-align:center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:50px;
+  right:50px;
+  background-color: rgb(37, 247, 9);
+  border-radius:50px;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #createIcon{
   width:30px;

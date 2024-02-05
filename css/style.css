@@ -78,7 +78,7 @@ body {
   background-color: rgb(74,74,74);
   margin-right: 15px;
 }
-#cardHeadingNSvg{
+.cardHeadingNSvg, a{
   width: auto;
   height: 50px;
   overflow: hidden;
@@ -87,7 +87,7 @@ body {
   background-color: rgb(74,74,74);
   align-items: center;
 }
-#tag-Container{
+.tag-Container{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -107,7 +107,7 @@ body {
   overflow-y: hidden;
 }
 
-#descriptionCard{
+.descriptionCard{
   background-color: rgb(74,74,74);
   margin-left: 15px;
   color: white;
@@ -119,20 +119,20 @@ body {
   justify-content: row;
   align-items: center;
 }
-#descriptionCard h6{
+.descriptionCard h5{
   background-color: rgb(74,74,74);
   padding: 3px 0px 3px 3px;
   width: 220px;
   font-size: 12px;
 }
-#readMore{
+.readMore{
   color: rgb(111,133,247);
   width: auto;
   font-size: 15px;
   background-color: rgb(74,74,74);
   text-decoration: none;
 }
-#createdNUpdatedDiv{
+.createdNUpdatedDiv{
   background-color: rgb(74,74,74);
   padding-right: 15px;
   width: auto;
@@ -142,18 +142,18 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-#createdNUpdatedDiv, h6, span{
+.createdNUpdatedDiv, h6, span{
   padding-left: 0px;
   font-size: 10px;
   background-color: rgb(74,74,74);
 }
-#createdAtDiv{
+.createdAtDiv{
   padding-left: 0px;
   font-size: 10px;
   background-color: rgb(74,74,74);
 }
 
-#updatedAtDiv{
+.updatedAtDiv{
   padding-right: 0px;
 }
 #createTodoBtn{

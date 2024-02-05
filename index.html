@@ -12,70 +12,82 @@
       rel="stylesheet"
     />
     <!-- GOOGLE FONTS END -->
-
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <!-- Navbar Starts -->
     <div id="navbar">
       <div id="leftDiv">Kanban Board</div>
-      <div id="rightDiv"><a id="home" href="./index.html">Home</a></div>
+      <div id="rightDiv">Home</div>
     </div>
     <!-- Navbar Ends -->
 
     <div id="allTaskDiv">
       <!-- todo section -->
 
-      <div id="todoDiv">
-        <h2>Todo</h2>
-
-        <!-- single Card Starts -->
+      <template id="singleTaskCardTempl">
         <div class="singleCard">
-          <div id="cardHeadingNSvg">
-            <h4 class="cardHeading">Task 1</h4>
-            <img
-              src="./assets/editTodo.svg"
-              class="editTodoSvg"
-              alt="editBtn"
-            />
+          <!-- single card heading and edit button -->
+          <div class="cardHeadingNSvg">
+            <h4 class="cardHeading"></h4>
+            <a href=""
+              ><img
+                src="./assets/editTodo.svg"
+                class="editTodoSvg"
+                alt="editBtn"
+                onclick=""
+            /></a>
           </div>
 
           <!-- tag container -->
-          <div id="tag-Container">
-            <div id="firstTag" class="tags">code</div>
-            <div class="tags">daily</div>
-          </div>
 
-          <div id="descriptionCard">
-            <h6>this is my simple task description</h6>
-            <a id="readMore" href="/html/createtodo.html" target="_blank"
+          <div class="tag-Container"></div>
+
+          <!-- description div -->
+          <div class="descriptionCard">
+            <p></p>
+            <a class="readMore" href="/html/createtodo.html" target="_blank"
               >.... Read more</a
             >
           </div>
 
-          <div id="createdNUpdatedDiv">
-            <div id="createdAtDiv">
-              <h6>Created At : <span> 12-01-2024 10:15 AM</span></h6>
+          <!-- timestamps div -->
+          <div class="createdNUpdatedDiv">
+            <div class="createdAtDiv">
+              <p>
+                Created At :
+                <span class="createDateSpan"></span>
+              </p>
             </div>
 
-            <div id="updatedAtDiv">
-              <h6>Updated At : <span> 19-01-2024 02:30 PM</span></h6>
+            <div class="updatedAtDiv">
+              <p>
+                Updated At :
+                <span class="updateDateSpan"></span>
+              </p>
             </div>
           </div>
+
           <!-- single Card ENDS -->
         </div>
+      </template>
+
+      <template id="chipTagTemplate">
+        <div class="tags"></div>
+      </template>
+
+      <div id="todoDiv">
+        <h2>Todo</h2>
       </div>
 
       <!-- in progress section -->
       <div id="inProgressDiv">
         <h2>In Progress</h2>
-        <div class="singleCard"></div>
       </div>
 
       <!-- done section -->
       <div id="doneDiv">
         <h2>Done</h2>
-        <div class="singleCard"></div>
       </div>
     </div>
 

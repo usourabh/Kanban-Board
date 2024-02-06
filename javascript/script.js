@@ -84,3 +84,7 @@ const editTask = (id) => {
     });
   }
 };
+
+const drag = (e) => {
+  e.dataTransfer.setData("text", e.target.id);
+};

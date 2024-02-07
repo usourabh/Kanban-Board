@@ -5,7 +5,7 @@ const createTodo = () => {
     .getElementById("tag-Container")
     .getElementsByTagName("h6");
 
-  if (!todoTitle == "" && todoDescription == "" && tagCollection.length < 1) {
+  if (todoTitle !== "" && todoDescription !== "" && tagCollection.length >= 1) {
     const allTags = [];
     let todo = [];
 
@@ -78,9 +78,11 @@ const createTodoNView = () => {
   const tagCollection = document
     .getElementById("tag-Container")
     .getElementsByTagName("h6");
-  if (!todoTitle == "" && todoDescription == "" && tagCollection.length < 1) {
+  if (!todoTitle == "" && todoDescription == "" && !tagCollection.length < 1) {
     createTodo();
     window.location.href = "../index.html";
+  } else {
+    alert("Fill all the fields");
   }
 };
 

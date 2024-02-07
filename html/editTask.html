@@ -63,17 +63,29 @@
 
       <!-- Tags card template -->
       <template id="newTagTemp">
-        <div id="singleTag" class="tags"></div>
+        <!-- <div id="singleTag" class="singleTag" contenteditable="true"></div> -->
+        <div class="singleTag">
+          <h6
+            class="emptyTag"
+            aria-placeholder="empty"
+            contenteditable="true"
+          ></h6>
+          <img
+            class="tagCloseBtn"
+            onclick="removeTag(this)"
+            src="../assets/close.svg"
+            alt="closeBtn"
+          />
+        </div>
       </template>
 
       <!-- submit button -->
       <div id="submitBtn">
-        <button id="createBtn" onclick="createTodo()">
+        <button id="createBtn" onclick="editNView()">
           <h6>Edit & View</h6>
         </button>
       </div>
     </div>
-    <script src="../javascript/createTodo.js"></script>
-    <script src="../javascript/script.js"></script>
+    <script src="../javascript/editTask.js"></script>
   </body>
 </html>

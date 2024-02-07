@@ -18,7 +18,24 @@ window.onload = () => {
       }
     });
   } else {
-    alert("hello");
+    const todoDiv = document.getElementById("todoDiv");
+    const inprogressDiv = document.getElementById("inProgressDiv");
+    const doneDiv = document.getElementById("doneDiv");
+
+    const noTaskFound = document
+      .querySelector("#noTaskFoundTemp")
+      .content.cloneNode(true);
+    todoDiv.appendChild(noTaskFound);
+
+    const noTaskFound2 = document
+      .querySelector("#noTaskFoundTemp")
+      .content.cloneNode(true);
+    inprogressDiv.appendChild(noTaskFound2);
+
+    const noTaskFound3 = document
+      .querySelector("#noTaskFoundTemp")
+      .content.cloneNode(true);
+    doneDiv.appendChild(noTaskFound3);
   }
 };
 
@@ -62,26 +79,33 @@ const editTask = (id) => {
     }
   });
   if (singleTask) {
-    window.open("http://127.0.0.1:5500/html/edittask.html", "_blank");
-    const taskTile = document.querySelector("#titleInput");
-    const taskDesc = document.querySelector("#textareaInput");
-    const tagContainer = document.querySelector("#tag-Container");
-    const singleTag = document
-      .querySelector("#newTagTemp")
-      .content.cloneNode(true);
+    if (localStorage.getItem("taskToEdit")) {
+      localStorage.removeItem("taskToEdit");
+      localStorage.setItem("taskToEdit", JSON.stringify(singleTask));
+      window.open("http://127.0.0.1:5500/html/edittask.html", "_blank");
+    } else {
+      localStorage.setItem("taskToEdit", JSON.stringify(singleTask));
+      window.open("http://127.0.0.1:5500/html/edittask.html", "_blank");
+    }
+    // const taskTile = document.querySelector("#titleInput");
+    // const taskDesc = document.querySelector("#textareaInput");
+    // const tagContainer = document.querySelector("#tag-Container");
+    // const singleTag = document
+    //   .querySelector("#newTagTemp")
+    //   .content.cloneNode(true);
 
-    taskTile.textContent = singleTag.todoName;
-    taskDesc.textContent = singleTag.todoDesc;
+    // taskTile.textContent = singleTag.todoName;
+    // taskDesc.textContent = singleTag.todoDesc;
 
-    singleTag.tags.forEach((tag) => {
-      const singleTag = document
-        .querySelector("#newTagTemp")
-        .content.cloneNode(true);
+    // singleTag.tags.forEach((tag) => {
+    //   const singleTag = document
+    //     .querySelector("#newTagTemp")
+    //     .content.cloneNode(true);
 
-      singleTag.querySelector(".singleTag").textContent = tag;
+    //   singleTag.querySelector(".singleTag").textContent = tag;
 
-      tagContainer.appendChild(singleTag);
-    });
+    //   tagContainer.appendChild(singleTag);
+    // });
   }
 };
 

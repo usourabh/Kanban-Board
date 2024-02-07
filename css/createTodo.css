@@ -93,7 +93,7 @@ margin-left: 45px;
   align-items: center;
   overflow-y: auto;
 }
-.tags{
+.singleTag{
   background-color: rgb(236, 191, 12);
   padding: 6px;
   height: 35px;

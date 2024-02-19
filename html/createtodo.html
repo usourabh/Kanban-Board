@@ -48,23 +48,20 @@
 
       <div id="tagSection">
         <div id="tag-Container">
-          <!-- here below template with id newTagTemp 
-            gets rendered on button click -->
-        </div>
-        <div>
-          <img
-            src="/assets/createTodo.png"
-            id="createIcon"
-            alt="createTodo"
-            onclick="createNewTag()"
+          <input
+            type="text"
+            class="tags-input"
+            oninput="handleChipInput(event)"
+            id="chipInput"
           />
         </div>
       </div>
 
       <!-- Tags card template -->
       <template id="newTagTemp">
-        <div id="singleTag" class="singleTag">
-          <h6 aria-placeholder="empty" contenteditable="true">empty</h6>
+        <div class="singleTag">
+          <!-- <div id="singleTag" class="singleTag"> -->
+          <h6 class="tagText" contenteditable="true"></h6>
           <img
             class="tagCloseBtn"
             onclick="removeTag(this)"

@@ -40,7 +40,6 @@ body {
   padding: 30px;
   overflow-y: auto;
   flex: 1;
-  border: 1px solid #ffffff;
 }
 
 #todoDiv h2,
@@ -55,13 +54,15 @@ body {
 
 .singleCard{
   background-color: rgb(74,74,74);
-  height: 170px;
+  height: auto;
+  overflow-y: auto;
   width: 400px;
   margin: 15px;
   border-radius: 15px;
   display: flex;
   flex-direction: column; 
 }
+
 .cardHeading{
   color: white; 
   font-size: 20px;
@@ -97,24 +98,30 @@ body {
   background-color: rgb(74,74,74);
 }
 .singleTag{
-  background-color: rgb(97, 245, 5);
-  width: auto;
+  display: inline-block;
+  width: fit-content;
   padding: 5px;
   margin: 5px;
   font-size: 15px;
   border-radius: 9px;
   color: black;
   border: none;
+  overflow-y: hidden;
 
+}
+.tagText{
+  width: 100%;
 }
 
 .descriptionCard{
   background-color: rgb(74,74,74);
   margin-left: 15px;
+  margin-right: 15px;
   color: white;
   width: auto;
-  height: 30px;
-  overflow-x: auto;
+  height: auto;
+  overflow: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
   justify-content: row;
@@ -123,7 +130,9 @@ body {
 .descriptionCard p{
   background-color: rgb(74,74,74);
   padding: 3px 0px 3px 3px;
-  width: auto;
+  width: 260px;
+  overflow: hidden;
+  height: 20px;
   font-size: 12px;
 
 }
@@ -131,7 +140,6 @@ body {
   color: rgb(111,133,247);
   width: auto;
   font-size: 15px;
-  background-color: rgb(74,74,74);
   text-decoration: none;
 }
 .createdNUpdatedDiv{
@@ -140,6 +148,7 @@ body {
   width: auto;
   margin-left: 15px;
   height: 50px;
+  overflow-y: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -185,4 +194,51 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#inProgressDiv .singleCard,
+#inProgressDiv .cardHeadingNSvg,
+#inProgressDiv .cardHeading,
+#inProgressDiv .editTodoSvg,
+#inProgressDiv .tag-Container,
+#inProgressDiv .descriptionCard,
+#inProgressDiv .description,
+#inProgressDiv .readMore,
+#inProgressDiv .createdNUpdatedDiv,
+#inProgressDiv .createdAtDiv,
+#inProgressDiv .updatedAtDiv,
+#inProgressDiv p,#inProgressDiv span
+{
+  background-color: #584666;
+}
+
+#doneDiv .singleCard,
+#doneDiv .cardHeadingNSvg,
+#doneDiv .cardHeading,
+#doneDiv .editTodoSvg,
+#doneDiv .tag-Container,
+#doneDiv .descriptionCard,
+#doneDiv .description,
+#doneDiv .readMore,
+#doneDiv .createdNUpdatedDiv,
+#doneDiv .createdAtDiv,
+#doneDiv .updatedAtDiv,
+#doneDiv p,#doneDiv span
+{
+  background-color: #4E6646;
+}
+
+._1{
+  background-color: rgb(97, 245, 5);
+}
+._2{
+  background-color: rgb(4, 220, 220);
+}
+._3{
+  background-color: rgb(245, 221, 5);
+}
+._4{
+  background-color: rgb(222, 124, 247);
+}
+._5{
+  background-color: rgb(241, 87, 87);
 }

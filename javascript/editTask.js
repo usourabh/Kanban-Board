@@ -49,24 +49,34 @@ const editNView = () => {
   const editedTagsArray = Array.from(editedTags).map((tag) => tag.textContent);
 
   let idToBeRemoved;
-  allTask.map((task) => {
+
+  // i - 1
+  // allTask -> task1, task2
+  // allTask -> task2
+  // allTask -> task2, task_test1
+  // i - 2
+  // allTask -> task2, task_test1
+  // task_test1
+  // allTask -> task_test1, task_test1
+  // Pass by value & Pass by ref
+  const operationalArray = [...allTask];
+  allTask.map((task, idx) => {
     if (task.id == singletask.id) {
       // allTask.splice(task.id - 1, 1);
-      allTask.splice(task.id - 1, 1);
-
+      console.log(allTask);
       idToBeRemoved = task.id;
-      const newUpdatedTag = editTask(
+      operationalArray[idx] = editTask(
         task.id,
         name,
         description,
         editedTagsArray,
         task.createdOn
       );
-      allTask.push(newUpdatedTag);
+      console.log(operationalArray);
     }
   });
 
-  localStorage.setItem("kanbanBoard", JSON.stringify(allTask));
+  localStorage.setItem("kanbanBoard", JSON.stringify(operationalArray));
   localStorage.removeItem("taskToEdit");
   window.open("http://127.0.0.1:5500/index.html", "_blank");
 };

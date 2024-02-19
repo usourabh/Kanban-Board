@@ -22,11 +22,18 @@
     </div>
     <!-- Navbar Ends -->
 
-    <div id="allTaskDiv">
+    <!-- whole PAGE -->
+    <div id="allTaskDiv" class="container">
       <!-- todo section -->
 
+      <!-- SINGLE CARD DYNAMIC -->
       <template id="singleTaskCardTempl">
-        <div class="singleCard" draggable="true" ondragstart="drag(event)">
+        <div
+          class="singleCard"
+          draggable="true"
+          ondragstart="dragStart(event)"
+          ondragend="dragEnd()"
+        >
           <!-- single card heading and edit button -->
           <div class="cardHeadingNSvg">
             <h4 class="cardHeading"></h4>
@@ -34,7 +41,7 @@
               src="./assets/editTodo.svg"
               class="editTodoSvg"
               alt="editBtn"
-              onclick="editTask(this.id)"
+              onclick="editTask(event)"
             />
           </div>
 
@@ -45,7 +52,9 @@
           <!-- description div -->
           <div class="descriptionCard">
             <p class="description"></p>
-            <a class="readMore" target="_blank"> ....Read more </a>
+            <a class="readMore" target="_blank" onclick="addedReadmore(this)">
+              ....Read more
+            </a>
           </div>
 
           <!-- timestamps div -->
@@ -69,29 +78,54 @@
         </div>
       </template>
 
+      <!-- SINGLE TAG TEMPLATE -->
       <template id="chipTagTemplate">
         <div class="singleTag"></div>
       </template>
 
+      <!-- NOTASK FOUND TEMPLATE -->
       <template id="noTaskFoundTemp">
         <div class="noTaskFound">No Task Found</div>
       </template>
 
-      <div id="todoDiv">
+      <!-- MAIN TODO SECTIOM -->
+      <div
+        id="todoDiv"
+        class="container"
+        ondragover="dragOver(event)"
+        ondragenter="dragEnter()"
+        ondragleave="dragLeave()"
+        ondrop="drop(event)"
+      >
         <h2>Todo</h2>
       </div>
 
-      <!-- in progress section -->
-      <div id="inProgressDiv">
+      <!-- IN PROGRESS SECTION -->
+      <div
+        id="inProgressDiv"
+        class="container"
+        ondragover="dragOver(event)"
+        ondragenter="dragEnter()"
+        ondragleave="dragLeave()"
+        ondrop="drop(event)"
+      >
         <h2>In Progress</h2>
       </div>
 
-      <!-- done section -->
-      <div id="doneDiv">
+      <!-- DONE SECTION -->
+      <div
+        id="doneDiv"
+        class="container"
+        ondragover="dragOver(event)"
+        ondragenter="dragEnter()"
+        ondragleave="dragLeave()"
+        ondrop="drop(event)"
+      >
         <h2>Done</h2>
       </div>
     </div>
 
+    <!-- FINAL SUBMIT BUTTON -->
     <a id="createTodoBtn" href="./html/createtodo.html" target="_blank">
       <img src="./assets/createTask.svg" id="createIcon" alt="createTodo" />
     </a>

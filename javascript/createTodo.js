@@ -62,14 +62,35 @@ const removeTag = (e) => {
   tagContainer.removeChild(e.parentElement);
 };
 
-const createNewTag = () => {
-  const tagContainer = document.getElementById("tag-Container");
-  if (tagContainer.getElementsByClassName("tags").length < 5) {
-    const tagTemp = document
-      .getElementById("newTagTemp")
-      .content.cloneNode(true);
-    tagContainer.appendChild(tagTemp);
-  }
+const handleChipInput = (e) => {
+  // const tagContainer = document.getElementById("tag-Container");
+  // if (tagContainer.getElementsByClassName("tags").length < 5) {
+  //   const tagTemp = document
+  //     .getElementById("newTagTemp")
+  //     .content.cloneNode(true);
+  //   tagContainer.appendChild(tagTemp);
+  // }
+
+  // Fetch chip template, input field and tags container
+  const chipTemplate = document.querySelector("#newTagTemp");
+  const input = document.querySelector("chipInput");
+  const tags = document.querySelector("#tag-Container");
+
+  // const handleChipInput = (e) => {
+  const { value } = e.target;
+  // If value doesn't include ',', return
+  if (!value.includes(",")) return;
+
+  // Clone the chip template node
+  const chip = chipTemplate.content.cloneNode(true);
+  // Assign value to the chip
+  chip.querySelector(".tagText").textContent = value.split(",")[0];
+
+  // Insert the chip in the tags container before the input element
+  tags.insertBefore(chip, input);
+  // Reset the value
+  e.target.value = "";
+  // };
 };
 
 const createTodoNView = () => {
@@ -78,12 +99,9 @@ const createTodoNView = () => {
   const tagCollection = document
     .getElementById("tag-Container")
     .getElementsByTagName("h6");
-  if (!todoTitle == "" && todoDescription == "" && !tagCollection.length < 1) {
-    createTodo();
-    window.location.href = "../index.html";
-  } else {
-    alert("Fill all the fields");
-  }
+
+  createTodo();
+  window.location.href = "../index.html";
 };
 
 const clearInputFields = () => {
